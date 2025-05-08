@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# 🌌 JupBoard – Contributor Reputation Tracker for Jupiverse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**JupBoard** is a contributor reputation dashboard built for the Jupiter DAO ecosystem. It provides visibility into GitHub-based contributions by allowing users to link their wallet and GitHub account, calculate a reputation score, and be ranked transparently on a public leaderboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔐 Wallet + GitHub onboarding form
+- ⚙️ GitHub API-based PR contribution tracking
+- 📊 Reputation score calculation (merged PR × 10)
+- 🏆 Leaderboard sorted by contributor score
+- 👤 Profile pages showing wallet, GitHub info, PR stats, and avatar
+- 🔄 Real-time updates via Supabase backend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🖼 UI Screenshots
+
+> Place these images inside `public/MainPhoto.PNG` and adjust paths if needed.
+
+---
+
+## 🧠 Tech Stack
+
+| Layer       | Tech Used                      |
+|-------------|-------------------------------|
+| Frontend    | React + Vite + TypeScript      |
+| Styling     | Tailwind CSS                   |
+| Backend     | Supabase (PostgreSQL + API)    |
+| Data Source | GitHub REST API                |
+| Hosting     | Vercel (suggested)             |
+
+---
+
+## ⚙️ Local Setup
+
+```bash
+git clone https://github.com/bytemaster333/jupboard.git
+cd jupboard
+npm install
+cp .env.example .env
+# Add your Supabase credentials into .env
+npm run dev
 ```
+## 🔐 Environment Variables
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Make sure to set your own credentials in a .env file:
+```bash
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
+Do not commit .env files or sensitive credentials.
+
+## 🛣 Roadmap – What's Next?
+
+### 📚 Reputation System Enhancements
+✅ Score breakdown: PR count → score mapping displayed in UI
+
+🔧 DAO-configurable scoring weights (score_rules.json)
+
+🧩 Integration with forum contributions, voting activity (e.g., Snapshot)
+
+### 🏅 Contributor Recognition & Incentives
+🏆 Dynamic badge system: “Top 3”, “Early Contributor”, “Weekly Warrior”
+
+📆 Season-based contribution tracking (DAO-wide campaigns)
+
+🔄 Manual “Update My Score” button for real-time resync
+
+### 🛠 Workgroup & Admin Tools
+🗂 Workgroup dashboards for filtering/searching contributors
+
+🔍 Skill tagging or contribution type indicators
+
+✅ Reputation-based contributor recommendations for bounties
+
+### 📢 Governance Integration
+🗳 Proposal comment weighting by contributor score
+
+🪙 Future potential: token or NFT-based rewards for top contributors
