@@ -14,10 +14,10 @@ const RegisterForm = () => {
 
     const score = await getGitHubPRScore(github);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("contributors")
       .insert([{ wallet_address: wallet, github_username: github, score }]);
-
+    
     if (error) {
       console.error(error);
       alert("Error: " + error.message);
