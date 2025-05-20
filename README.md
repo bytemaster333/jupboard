@@ -1,5 +1,7 @@
 # 🌌 JupBoard – Contributor Reputation Tracker for Jupiverse
 
+🔗 **Live Demo:** [https://jupboard.vercel.app](https://jupboard.vercel.app)
+
 **JupBoard** is a contributor reputation dashboard built for the Jupiter DAO ecosystem. It provides visibility into GitHub-based contributions by allowing users to link their wallet and GitHub account, calculate a reputation score, and be ranked transparently on a public leaderboard.
 
 ---
